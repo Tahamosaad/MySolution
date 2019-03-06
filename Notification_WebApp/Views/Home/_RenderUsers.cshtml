@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DAL.tbl_cust>
+<div class="card">
+    <h2 class="card-header">Online Users</h2>
+    <form class="card-body">
+        <div class="form-group">
+
+            <select multiple class="form-control" name="users" id="user-lst" style="position: static;">
+
+                @foreach (var item in Model)
+                {
+                    <option>@item.UserName</option>
+                }
+            </select>
+
+        </div>
+
+    </form>
+
+</div>

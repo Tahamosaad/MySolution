@@ -1,0 +1,83 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://localhost:49632/Content/StyleSheet1.css" rel="stylesheet" />
+    <script src="http://localhost:49632/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="http://localhost:49632/Scripts/app.js"></script>
+
+</head>
+<body>
+
+    <div class="topnav" style="background:dodgerblue;">
+        <a onclick="showHome()">Home</a>
+        <a onclick="showReportList()">Report</a>
+
+    </div>
+
+    <div class="row" id="Home">
+
+        <div class="col-sm-4 ">
+            @{
+                Html.RenderAction("_RenderUsers","Home");
+            }
+
+
+        </div>
+
+        <div class="col-sm-8 ">
+            @{
+                Html.RenderAction("_RenderNotification", "Home");
+            }
+
+        </div>
+
+    </div>
+    <div class="row" id="Report" style="display: none;">
+        <div class="col-12">
+            <div class="card">
+                <h2>Tracking Report Summary</h2>
+                <div title="" style="height:200px; outline:solid;">
+                    <table class="table borderless">
+
+                        <tbody>
+                            <tr>
+                                <th><label style="font-size:medium;">send at :</label></th>
+                                <td>
+
+                                    <label>@DateTime.Now.ToString()</label>
+                                </td>
+
+
+
+                            </tr>
+                            <tr>
+                                <th><label style="font-size:medium;">Status :</label></th>
+                                <td>
+                                    <label>Inprogress</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label style="font-size:medium;">Delivered to :</label></th>
+                                <td colspan="2"> <label>@DateTime.Now.ToString()</label></td>
+
+
+                                <th><label style="font-size:medium; ">Seen by :</label> </th>
+                                <td><label>0 Recipents</label></td>
+                                <td><a href="#" style="float:right">details</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+
+</html>
